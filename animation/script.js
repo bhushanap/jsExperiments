@@ -22,7 +22,7 @@ while(y<height){
         while(x<width){
         drawSnowman(x,y,10,0.4*Math.random()+0.5);
         x += xspacing;
-        console.log(x,y)
+        // console.log(x,y)
     }
     y += yspacing;
     x = xspacing;
@@ -32,8 +32,13 @@ while(y<height){
 // drawSnowman(x,y1,r1,scale);
 
 function drawSnowman(x,y1,r1,scale){
-    ctx.strokeStyle='#FFFF99';
-    ctx.fillStyle='#FFFF99';
+    // ctx.strokeStyle='#FFFF99';
+    // ctx.fillStyle='#FFFF99';
+    r = Math.trunc(255*Math.random());
+    g = Math.trunc(255*Math.random());
+    b = Math.trunc(255*Math.random()); 
+    ctx.strokeStyle = 'rgb(' + r + ',' + g + ',' + b + ')';
+    ctx.fillStyle = 'rgb(' + r + ',' + g + ',' + b + ')';
     ctx.beginPath();
     ctx.arc(x,y1,r1,0,Math.PI*2);
     ctx.fill();
@@ -53,8 +58,14 @@ function drawSnowman(x,y1,r1,scale){
 }
 
 function drawHat(x,y,width){
-    ctx.strokeStyle='#FF9999';
-    ctx.fillStyle='#FF9999';
+    // ctx.strokeStyle='#FF9999';
+    // ctx.fillStyle='#FF9999';
+    r = Math.trunc(255*Math.random());
+    g = Math.trunc(255*Math.random());
+    b = Math.trunc(255*Math.random());
+    console.log(r,g,b); 
+    ctx.strokeStyle = 'rgb(' + r + ',' + g + ',' + b + ')';
+    ctx.fillStyle = 'rgb(' + r + ',' + g + ',' + b + ')';
     ctx.beginPath();
     const x4 = x - width/2; y4= y - width/5;
     ctx.rect(x4,y4,width,width/5)
