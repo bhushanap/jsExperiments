@@ -1,2 +1,5 @@
 # jsExperiments
-random repository to test multiple javascript projects
+arbitary repository to test multiple javascript projects
+
+1. basics
+2. random shapes
