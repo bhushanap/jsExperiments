@@ -27,7 +27,22 @@ function drawSnowman(x,y1,r1,scale){
     const r3 = r2*scale, y3 = y2 - r2 - r3;
     ctx.arc(x,y3,r3,0,Math.PI*2);
     ctx.fill();
-
     
+    drawHat(x,y3-r3/2,2*r3);
+
+}
+
+function drawHat(x,y,width){
+    ctx.strokeStyle='#FF9999';
+ctx.fillStyle='#FF9999';
+    ctx.beginPath();
+    const x4 = x - width/2; y4= y - width/5;
+    ctx.rect(x4,y4,width,width/5)
+    ctx.fill();
+
+    ctx.beginPath();
+    const x5 = x - width/4; y5= y4 - width/2;
+    ctx.rect(x5,y5,width/2,width/2+1)
+    ctx.fill();
 }
 
