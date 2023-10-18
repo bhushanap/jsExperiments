@@ -19,16 +19,16 @@ function drawSnowman(x,y1,r1,scale){
     ctx.fill();
 
     ctx.beginPath();
-    const r2 = r1*scale, y2 = y1 - r1 - r2;
+    const r2 = r1*scale, y2 = y1 - r1 - scale*r2;
     ctx.arc(x,y2,r2,0,Math.PI*2);
     ctx.fill();
 
     ctx.beginPath();
-    const r3 = r2*scale, y3 = y2 - r2 - r3;
+    const r3 = r2*scale, y3 = y2 - r2 - scale*r3;
     ctx.arc(x,y3,r3,0,Math.PI*2);
     ctx.fill();
     
-    drawHat(x,y3-r3/2,2*r3);
+    drawHat(x,y3-r3*scale,2*r3);
 
 }
 
