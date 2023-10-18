@@ -1,19 +1,39 @@
 const el=document.getElementById('myCanvas');
 const ctx=el.getContext('2d');
-ctx.strokeStyle='#FFFF99';
-ctx.fillStyle='#FFFF99';
+
 // ctx.beginPath();
 // ctx.arc(200,300,50,0,Math.PI*2);
 // ctx.fill();
 
-x = 200;
-y1 = 300;
-r1 = 50;
+// x = 200;
+// y1 = 300;
+// r1 = 50;
 scale = 0.7;
+xspacing = 50;
+yspacing = 80;
+width = 400;
+height = 400;
 
-drawSnowman(x,y1,r1,scale);
+x = xspacing;
+y = yspacing;
+
+
+while(y<height){
+        while(x<width){
+        drawSnowman(x,y,10,0.4*Math.random()+0.5);
+        x += xspacing;
+        console.log(x,y)
+    }
+    y += yspacing;
+    x = xspacing;
+}
+
+
+// drawSnowman(x,y1,r1,scale);
 
 function drawSnowman(x,y1,r1,scale){
+    ctx.strokeStyle='#FFFF99';
+    ctx.fillStyle='#FFFF99';
     ctx.beginPath();
     ctx.arc(x,y1,r1,0,Math.PI*2);
     ctx.fill();
@@ -34,7 +54,7 @@ function drawSnowman(x,y1,r1,scale){
 
 function drawHat(x,y,width){
     ctx.strokeStyle='#FF9999';
-ctx.fillStyle='#FF9999';
+    ctx.fillStyle='#FF9999';
     ctx.beginPath();
     const x4 = x - width/2; y4= y - width/5;
     ctx.rect(x4,y4,width,width/5)
